@@ -11,3 +11,7 @@ Andrej Karaphy's [Micrograd](https://github.com/karpathy/micrograd) served as in
 [Building an Autograd Engine: An Illustrative and Interactive Guide](https://x0axz.com/blog/autograd.html)
 
 The article provides a comprehensive guide to building an autograd engine. It assumes a basic understanding of Python programming, high school calculus, and neural networks but offers various teaching methods for beginners. It includes line-by-line code explanations, output visualizations, and an interactive area to explore derivatives. The guide covers the foundational concepts of neural networks, starting with derivatives and progressing to backpropagation. It explains how to perform backpropagation manually and programmatically, including implementation techniques. The article also demonstrates the building of an autograd class from scratch and its application to training a neural network on a dataset. It concludes by guiding readers through the development of a simple neural network library using the autograd class.
+
+## Example
+
+Play with this [Notebook](https://github.com/x0axz/autograd/blob/main/notebook/N_dimensional_Autograd_Engine.ipynb).
