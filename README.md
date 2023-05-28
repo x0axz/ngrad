@@ -1,6 +1,6 @@
 # Autograd Engine
 
-The repository includes an Autograd engine and a neural network library that can handle N-dimensional arrays. 
+The repository includes an Autograd engine and a neural network library that handles N-dimensional arrays.
 
 Autograd is a tool used for derivative calculation. It tracks operations on values with enabled gradients and builds a dynamic computational graph — a graph without cycles. Input values serve as the leaves of the graph, while output values act as its roots. Gradients are computed by traversing the graph from root to leaf, applying the chain rule to multiply gradients at each step.
 
