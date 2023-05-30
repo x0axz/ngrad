@@ -48,3 +48,7 @@ This [notebook](https://github.com/x0axz/ngrad/blob/main/notebook/Training_Neura
 ## Notebook
 
 This [notebook](https://github.com/x0axz/ngrad/blob/main/notebook/Autograd_Engine_&_NN_Library.ipynb) contains a comprehensive collection of examples and code for building, testing, and training the autograd engine and neural network library. Play with it to experiment and explore its functionalities.
+
+## License
+
+MIT
