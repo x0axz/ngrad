@@ -14,6 +14,12 @@ The article provides a comprehensive guide to building an autograd engine and a 
 
 ## Installation
 
+```
+pip install ngrad
+```
+
+## Development
+
 The only library required for this to work is Numpy, which is used to handle N-dimensional array.
 
 ```
@@ -22,11 +28,17 @@ pip install -r requirements.txt
 
 ## Test
 
-To verify the accuracy of the [engine.py](https://github.com/x0axz/ngrad/blob/main/ngrad/engine.py) code and ensure that it produces the same output for the N-dimensional array, scalar value, and PyTorch APIs, execute the following command:
+To verify the accuracy of the [engine.py](https://github.com/x0axz/ngrad/blob/main/ngrad/engine.py) code and ensure that it produces the same output for the N-dimensional array, scalar value, and PyTorch APIs, execute the following command (make sure that PyTorch is installed):
 
 ```
 cd test/
-python engine_test.py
+pip install -r requirements.txt
+```
+
+Run the test:
+
+```
+python test_engine.py
 ```
 
 ## Train
