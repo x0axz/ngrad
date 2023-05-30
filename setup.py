@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="ngrad",
-    version="1.0.0",
+    version="1.0.1",
     description="An Autograd engine and a neural network library that handle an N-dimensional array.",
     long_description=long_description,
     long_description_content_type="text/markdown",
