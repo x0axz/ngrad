@@ -19,6 +19,7 @@ class Neuron:
   def parameters(self):
     # Return the weights and bias of the neuron as parameters
     return self.w + [self.b]
+
   
 class Layer:
 
@@ -35,6 +36,7 @@ class Layer:
   def parameters(self):
     # Return the parameters of all neurons in the layer
     return [p for neuron in self.neurons for p in neuron.parameters()]
+
   
 class MLP:
 

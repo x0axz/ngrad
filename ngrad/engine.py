@@ -34,8 +34,8 @@ class Value:
 
     def _backward():
       # Calculate the gradients using the chain rule and update the gradients of the operands
-      self.grad = self.grad + np.multiply(1.0, out.grad)
-      other.grad = other.grad + np.multiply(1.0, out.grad)
+      self.grad = self.grad + (1.0 * out.grad)
+      other.grad = other.grad + (1.0 * out.grad)
 
     # Assign the backward function to the new Value instance
     out._backward = _backward
@@ -51,8 +51,8 @@ class Value:
 
     def _backward():
       # Calculate the gradients using the chain rule and update the gradients of the operands
-      self.grad = self.grad + np.multiply(other.data, out.grad)
-      other.grad = other.grad + np.multiply(self.data, out.grad)
+      self.grad = self.grad + (other.data * out.grad)
+      other.grad = other.grad + (self.data * out.grad)
 
     # Assign the backward function to the new Value instance
     out._backward = _backward
@@ -67,7 +67,7 @@ class Value:
 
       def _backward():
         # Calculate the gradients using the chain rule and update the gradients of the operand
-        self.grad = self.grad + np.multiply(np.multiply(other, np.power(self.data, other - 1)), out.grad)
+        self.grad = self.grad + ((other * np.power(self.data, other - 1)) * out.grad)
 
       out._backward = _backward
       return out
@@ -78,36 +78,38 @@ class Value:
 
       def _backward():
         # Calculate the gradients using the chain rule and update the gradients of the operands
-        self.grad = self.grad + np.multiply(np.multiply(other.data, np.power(self.data, other.data - 1)), out.grad)
-        other.grad = other.grad + np.multiply(np.log(self.data), out.grad)
+        self.grad = self.grad + ((other.data * np.power(self.data * other.data - 1)) * out.grad)
+        other.grad = other.grad + (np.log(self.data) * out.grad)
 
       out._backward = _backward
       return out
     else:
       raise TypeError("Unsupported operand type(s) for **: 'Value' and '{}'".format(type(other).__name__))
 
+
   def __radd__(self, other):
     # Perform right addition by the Value instance
-    return np.add(self, other)
+    return self + other
+
 
   def __rmul__(self, other):
     # Perform right multiplication by the Value instance
-    return np.multiply(self, other)
+    return self * other
 
 
   def __truediv__(self, other):
     # Perform true division by the Value instance
-    return np.multiply(self, other**-1)
+    return self * other**-1
 
 
   def __neg__(self):
     # Perform negation of the Value instance
-    return np.multiply(self, -1)
+    return self * -1
 
 
   def __sub__(self, other):
     # Perform subtraction of a Value instance
-    return np.add(self, (-other))
+    return self + (-other)
 
 
   def exp(self):
@@ -117,7 +119,7 @@ class Value:
 
     def _backward():
         # Calculate the gradients using the chain rule
-        self.grad = self.grad + np.multiply(out.data, out.grad)
+        self.grad = self.grad + (out.data * out.grad)
 
     # Assign the backward function to the new Value instance
     out._backward = _backward
@@ -132,7 +134,7 @@ class Value:
 
     def _backward():
         # Calculate the gradients using the chain rule
-        self.grad = self.grad + np.multiply((1 - t**2), out.grad)
+        self.grad = self.grad + ((1 - t**2) * out.grad)
 
     # Assign the backward function to the new Value instance
     out._backward = _backward
