@@ -4,7 +4,7 @@ The repository includes an Autograd engine and a neural network library that han
 
 Autograd is a tool used for derivative calculation. It tracks operations on values with enabled gradients and builds a dynamic computational graph — a graph without cycles. Input values serve as the leaves of the graph, while output values act as its roots. Gradients are computed by traversing the graph from root to leaf, applying the chain rule to multiply gradients at each step.
 
-Andrej Karaphy's [Micrograd](https://github.com/karpathy/micrograd) served as inspiration for this project. But this Autograd engine will accept N-dimensional array, whereas Microgard accepts scalar values only.
+Andrej Karpathy's [Micrograd](https://github.com/karpathy/micrograd) served as inspiration for this project. But this Autograd engine will accept N-dimensional array, whereas Microgard accepts scalar values only.
 
 ## Blog
 
