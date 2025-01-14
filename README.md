@@ -8,7 +8,7 @@ Andrej Karpathy's [Micrograd](https://github.com/karpathy/micrograd) served as i
 
 ## Blog
 
-[Building Autograd Engine & Neural Network Library: An Interactive Guide](https://x0axz.com/blog/autograd.html)
+[Building Autograd Engine & Neural Network Library: An Interactive Guide](https://x0axz.github.io/blog/autograd.html)
 
 The article provides a comprehensive guide to building an autograd engine and a neural network library that handle an N-dimensional array. It assumes a basic understanding of Python programming, high school calculus, and neural networks but offers various teaching methods for beginners. It includes line-by-line code explanations, output visualizations, and an interactive area to explore derivatives. The guide covers the foundational concepts of neural networks, starting with derivatives and progressing to backpropagation. It explains how to perform backpropagation manually and programmatically, including implementation techniques. The article also demonstrates the building of an autograd class from scratch and its application to training a neural network on a dataset. It concludes by guiding readers through the development of a simple neural network library using the autograd class.
 
